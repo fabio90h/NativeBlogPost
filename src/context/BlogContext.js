@@ -10,7 +10,6 @@ const blogReducer = (state, action) => {
 				{ id: Math.floor(Math.random() * 9999), title: `Blog Post #${state.length + 1}` },
 			];
 		case "delete_blogpost":
-			console.log("reducer", action.payload);
 			return [...state].filter((current) => current.id !== action.payload);
 		default:
 			return [...state];
