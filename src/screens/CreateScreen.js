@@ -6,13 +6,15 @@ const CreateScreen = ({ route }) => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
+	const { addBlogPost } = useContext(Context);
+
 	return (
 		<View>
 			<Text style={styles.titleStyle}>Enter Title</Text>
 			<TextInput style={styles.contentStyle} value={title} onChangeText={setTitle} />
 			<Text style={styles.titleStyle}>Enter Content</Text>
 			<TextInput style={styles.contentStyle} value={content} onChangeText={setContent} />
-			<Button title="Create Blog Post" />
+			<Button title="Create Blog Post" onPress={() => addBlogPost(title, content)} />
 		</View>
 	);
 };

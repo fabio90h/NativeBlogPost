@@ -9,7 +9,9 @@ const ShowScreen = ({ route }) => {
 
 	return (
 		<View>
-			<Text>{blogPost.title}</Text>
+			<Text>
+				{blogPost.title} - {blogPost.content}
+			</Text>
 		</View>
 	);
 };
