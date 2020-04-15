@@ -13,7 +13,7 @@ const EditScreen = ({ route, navigation }) => {
 			navigation={navigation}
 			labels={{ title: "Edit Title", content: "Edit Content", button: "Save Edit" }}
 			onSubmit={(title, content) =>
-				editBlogPost(title, content, () => navigation.navigate("Index"), blogPost.id)
+				editBlogPost(title, content, () => navigation.pop(), blogPost.id)
 			}
 		/>
 	);
