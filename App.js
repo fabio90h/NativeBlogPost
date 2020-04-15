@@ -7,6 +7,7 @@ import { Provider } from "./src/context/BlogContext";
 import { Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import CreateScreen from "./src/screens/CreateScreen";
+import EditScreen from "./src/screens/EditScreen";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const App = () => {
 						})}
 					/>
 					<Stack.Screen name="Show" component={ShowScreen} />
+					<Stack.Screen name="Edit" component={EditScreen} />
 					<Stack.Screen name="Create" component={CreateScreen} />
 				</Stack.Navigator>
 			</NavigationContainer>
