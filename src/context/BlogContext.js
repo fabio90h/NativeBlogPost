@@ -25,18 +25,30 @@ const getBlogPost = (dispatch) => async () => {
 };
 const addBlogPost = (dispatch) => {
 	return async (title, content, callback) => {
-		await jsonServer.post("/blogpost", { title, content });
-		callback();
+		try {
+			await jsonServer.post("/blogpost", { title, content });
+			callback();
+		} catch (error) {
+			console.error(error);
+		}
 	};
 };
-const editBlogPost = (dispatch) => async (title, content, callback, id) => {
-	await jsonServer.put(`/blogpost/${id}`, { title, content });
-	dispatch({ type: "edit_blogpost", payload: { title, content, id } });
-	callback();
+const editBlogPost = (dispatch) => (title, content, callback, id) => {
+	try {
+		jsonServer.put(`/blogpost/${id}`, { title, content });
+		dispatch({ type: "edit_blogpost", payload: { title, content, id } });
+		callback();
+	} catch (error) {
+		console.error(error);
+	}
 };
-const deleteBlogPost = (dispatch) => async (id) => {
-	await jsonServer.delete(`/blogpost/${id}`);
-	dispatch({ type: "delete_blogpost", payload: id });
+const deleteBlogPost = (dispatch) => (id) => {
+	try {
+		jsonServer.delete(`/blogpost/${id}`);
+		dispatch({ type: "delete_blogpost", payload: id });
+	} catch (error) {
+		console.error(error);
+	}
 };
 
 export const { Context, Provider } = createDataContext(
