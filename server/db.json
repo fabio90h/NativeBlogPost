@@ -1,3 +1,14 @@
 {
-	"blogpost": []
+  "blogpost": [
+    {
+      "id": 123,
+      "title": "test",
+      "content": "test content"
+    },
+    {
+      "title": "N",
+      "content": "U",
+      "id": 124
+    }
+  ]
 }
